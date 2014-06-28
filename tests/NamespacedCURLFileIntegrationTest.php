@@ -20,6 +20,13 @@ class NamespacedCURLFileIntegrationTest extends PHPUnit_Framework_TestCase {
 		curl_setopt($handle, CURLOPT_URL, "http://{$host}/");
 		curl_setopt($handle, CURLOPT_RETURNTRANSFER, 1);
 
+		// If safe upload is defined, disable it for this unit test (>= 5.5)
+		// Also disable deprecated error reporting for now..
+		if (defined('CURLOPT_SAFE_UPLOAD')) {
+			curl_setopt($handle, CURLOPT_SAFE_UPLOAD, 0);
+			error_reporting(E_ALL & ~E_DEPRECATED);
+		}
+
 		$this->handle = $handle;
 	}
 
