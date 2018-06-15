@@ -4,7 +4,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/imnotjames/curlfile-compat.svg)](https://coveralls.io/r/imnotjames/curlfile-compat)
 
 Compatibility library to add a [CURLFile](http://php.net/class.curlfile) class to older versions of PHP.
-[https://wiki.php.net/rfc/curl-file-upload](The RFC) has some more information on it as well.
+[The RFC](https://wiki.php.net/rfc/curl-file-upload) has some more information on it as well.
 
 
 This class abuses the fact that the PHP `CURLOPT_POSTFIELDS` option will coerce classes to strings when
